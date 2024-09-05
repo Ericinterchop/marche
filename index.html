@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Interactif - Électronique</title>
+  <link rel="stylesheet" href="styles.css">
+  <meta name="description" content="Bienvenue sur Mon Site Web Interactif, découvrez des produits électroniques modernes.">
+  <meta name="keywords" content="électronique, montres connectées, smartphones, écouteurs, tablettes">
+</head>
+<body>
+  <header>
+      <h1>Bienvenue sur Interactif-Electronique</h1>
+      <nav>
+          <a href="#accueil">Accueil</a>
+          <a href="#produits">Produits</a>
+          <a href="#categories">Catégories</a>
+          <a href="#blog">Blog</a>
+          <a href="#faq">FAQ</a>
+          <a href="#contact">Contact</a>
+          <a href="#payment">Paiement</a>
+      </nav>
+      <div class="search-bar">
+          <input type="text" placeholder="Rechercher des produits...">
+          <button>🔍</button>
+      </div>
+      <div class="cart-icon" onclick="openModal()">🛒</div>
+  </header>
+
+  <section class="categories" id="categories">
+      <h3>Catégories de Produits</h3>
+      <a href="#">Montres Connectées</a>
+      <a href="#">Écouteurs</a>
+      <a href="#">Smartphones</a>
+      <a href="#">Tablettes</a>
+  </section>
+
+  <section class="container" id="produits">
+      <div class="card">
+          <img src="./images/Montre connecté 1.jpg" alt="Montre Connectée 1" loading="lazy">
+          <h2>Montre Connectée 1</h2>
+          <p>Suivez votre santé et votre activité avec cette montre connectée avancée.</p>
+          <p class="price">Prix: 199,99 €</p>
+          <p class="stock">Stock: 50 unités</p>
+          <button class="button" onclick="addToCart('Montre Connectée 1', 199.99)">Ajouter au Panier</button>
+      </div>
+      <div class="card">
+          <img src="./images/Montre Connectée 2.jpg" alt="Montre Connectée 2" loading="lazy">
+          <h2>Montre Connectée 2</h2>
+          <p>Montre connectée avec GPS intégré et suivi de la fréquence cardiaque.</p>
+          <p class="price">Prix: 249,99 €</p>
+          <p class="stock">Stock: 30 unités</p>
+          <button class="button" onclick="addToCart('Montre Connectée 2', 249.99)">Ajouter au Panier</button>
+      </div>
+      <div class="card">
+          <img src="./images/Écouteurs Sans Fil.jpg" alt="Écouteurs Sans Fil" loading="lazy">
+          <h2>Écouteurs Sans Fil</h2>
+          <p>Écoutez votre musique avec une qualité sonore exceptionnelle sans fil.</p>
+          <p class="price">Prix: 89,99 €</p>
+          <p class="stock">Stock: 100 unités</p>
+          <button class="button" onclick="addToCart('Écouteurs Sans Fil', 89.99)">Ajouter au Panier</button>
+      </div>
+      <div class="card">
+          <img src="./images/Smartphone 1.jpg" alt="Smartphone 1" loading="lazy">
+          <h2>Smartphone 1</h2>
+          <p>Smartphone dernier cri avec un écran haute définition et une caméra performante.</p>
+          <p class="price">Prix: 699,99 €</p>
+          <p class="stock">Stock: 20 unités</p>
+          <button class="button" onclick="addToCart('Smartphone 1', 699.99)">Ajouter au Panier</button>
+      </div>
+      <div class="card">
+          <img src="./images/Tablette 1.jpg" alt="Tablette 1" loading="lazy">
+          <h2>Tablette 1</h2>
+          <p>Tablette légère et puissante, idéale pour le travail et le divertissement.</p>
+          <p class="price">Prix: 399,99 €</p>
+          <p class="stock">Stock: 15 unités</p>
+          <button class="button" onclick="addToCart('Tablette 1', 399.99)">Ajouter au Panier</button>
+      </div>
+      <div class="card" id="moreProducts" style="display: none;">
+          <img src="./images/Montre Connectée 3.jpg" alt="Montre Connectée 3" loading="lazy">
+          <h2>Montre Connectée 3</h2>
+          <p>Montre connectée élégante avec plusieurs fonctionnalités de suivi de santé.</p>
+          <p class="price">Prix: 159,99 €</p>
+          <p class="stock">Stock: 40 unités</p>
+          <button class="button" onclick="addToCart('Montre Connectée 3', 159.99)">Ajouter au Panier</button>
+      </div>
+      <div class="card" id="moreProducts" style="display: none;">
+          <img src="./images/Smartphone 2.jpg" alt="Smartphone 2" loading="lazy">
+          <h2>Smartphone 2</h2>
+          <p>Smartphone avec une caméra de haute qualité et une longue autonomie.</p>
+          <p class="price">Prix: 499,99 €</p>
+          <p class="stock">Stock: 25 unités</p>
+          <button class="button" onclick="addToCart('Smartphone 2', 499.99)">Ajouter au Panier</button>
+      </div>
+      <div class="card" id="moreProducts" style="display: none;">
+          <img src="./images/Tablette 2.jpg" alt="Tablette 2" loading="lazy">
+          <h2>Tablette 2</h2>
+          <p>Tablette avec un écran tactile haute résolution et un processeur puissant.</p>
+          <p class="price">Prix: 349,99 €</p>
+          <p class="stock">Stock: 10 unités</p>
+          <button class="button" onclick="addToCart('Tablette 2', 349.99)">Ajouter au Panier</button>
+      </div>
+      <div class="card" id="moreProducts" style="display: none;">
+        <img src="./images/mini-bafle.jpg" alt="mini-bafle" loading="lazy">
+        <h2>mini-bafle</h2>
+        <p>Tablette avec un écran tactile haute résolution et un processeur puissant.</p>
+        <p class="price">Prix: 349,99 €</p>
+        <p class="stock">Stock: 10 unités</p>
+        <button class="button" onclick="addToCart('mini-bafle', 349.99)">Ajouter au Panier</button>
+    </div>
+    <div class="card" id="moreProducts" style="display: none;">
+        <img src="./images/mini-bafle2.jpg" alt="mini-bafle2" loading="lazy">
+        <h2>mini-bafle2</h2>
+        <p>Tablette avec un écran tactile haute résolution et un processeur puissant.</p>
+        <p class="price">Prix: 349,99 €</p>
+        <p class="stock">Stock: 10 unités</p>
+        <button class="button" onclick="addToCart('mini-bafle2', 349.99)">Ajouter au Panier</button>
+    </div>
+    <div class="card" id="moreProducts" style="display: none;">
+        <img src="./images/mini-camera-espion.jpg" alt="mini-camera-espion" loading="lazy">
+        <h2>mini-camera-espion</h2>
+        <p>Tablette avec un écran tactile haute résolution et un processeur puissant.</p>
+        <p class="price">Prix: 349,99 €</p>
+        <p class="stock">Stock: 10 unités</p>
+        <button class="button" onclick="addToCart('mini-camera-espion', 349.99)">Ajouter au Panier</button>
+    </div>
+    <div class="card" id="moreProducts" style="display: none;">
+        <img src="./images/camera-espion-.webp" alt="camera-espion-" loading="lazy">
+        <h2>camera-espion</h2>
+        <p>Tablette avec un écran tactile haute résolution et un processeur puissant.</p>
+        <p class="price">Prix: 349,99 €</p>
+        <p class="stock">Stock: 10 unités</p>
+        <button class="button" onclick="addToCart('camera-espion-', 349.99)">Ajouter au Panier</button>
+    </div>
+    <div class="card" id="moreProducts" style="display: none;">
+        <img src="./images/diffuseur.jpg" alt="diffuseur" loading="lazy">
+        <h2>diffuseur</h2>
+        <p>Tablette avec un écran tactile haute résolution et un processeur puissant.</p>
+        <p class="price">Prix: 39,99 €</p>
+        <p class="stock">Stock: 11 unités</p>
+        <button class="button" onclick="addToCart('diffuseur', 39.99)">Ajouter au Panier</button>
+    </div>
+    <div class="card" id="moreProducts" style="display: none;">
+        <img src="./images/diffuseur 2.jpg" alt="diffuseur 2" loading="lazy">
+        <h2>diffuseur d'arome</h2>
+        <p>Tablette avec un écran tactile haute résolution et un processeur puissant.</p>
+        <p class="price">Prix: 49,99 €</p>
+        <p class="stock">Stock: 15 unités</p>
+        <button class="button" onclick="addToCart('diffuseur 2', 49.99)">Ajouter au Panier</button>
+    </div>
+  </section>
+  <button class="button" id="seeMoreBtn" onclick="seeMore()">Voir plus</button>
+
+  <section class="blog-section" id="blog">
+      <h2>Blog</h2>
+      <p>Découvrez nos derniers articles sur les tendances électroniques et des conseils d'achat.</p>
+      <!-- Blog posts could be added here -->
+  </section>
+
+  <section class="payment-section" id="payment">
+      <h2>Paiement</h2>
+      <p>Nous acceptons plusieurs méthodes de paiement pour votre commodité.</p>
+      <!-- Payment methods could be listed here -->
+  </section>
+
+  <section class="faq-section" id="faq">
+      <h2>FAQ</h2>
+      <p>Consultez nos questions fréquentes pour plus d'informations sur nos services.</p>
+      <!-- FAQ content could be added here -->
+  </section>
+
+  <section class="contact-section" id="contact">
+      <div class="titre noir">
+          <h2 class="titre-text"><span>C</span>ontact</h2>
+      </div>
+      <div class="contactform">
+          <h2>Envoyer un message</h2>
+          <form action="https://formspree.io/f/xdknjakd" method="POST">
+              <div class="inputboite">
+                  <input type="text" id="nom" name="nom" placeholder="Nom" required>
+              </div>
+              <div class="inputboite">
+                 <input type="email" id="email" name="email" placeholder="Email" required>
+              </div>
+              <div class="inputboite">
+                 <textarea id="message" name="message" placeholder="Message" required></textarea>
+              </div>
+              <button type="submit" class="button">Envoyer</button>
+          </form>
+      </div>
+      <div class="whatsapp-contact">
+          <p>Contactez-nous sur WhatsApp : <a href="https://wa.me/237655131755" target="_blank">Cliquez ici</a></p>
+      </div>
+  </section>
+
+  <footer>
+      <p>&copy; 2024 Mon Site Web Interactif. Tous droits réservés.</p>
+      <div class="social-media">
+          <a href="https://www.facebook.com" target="_blank">
+              <img src="./images/Facebook.png" alt="Facebook">
+          </a>
+          <a href="https://www.twitter.com" target="_blank">
+              <img src="./images/X.png" alt="X">
+          </a>
+          <a href="https://www.instagram.com" target="_blank">
+              <img src="./images/Instagram.jpg" alt="Instagram">
+          </a>
+      </div>
+  </footer>
+
+  <div id="myModal" class="modal">
+      <div class="modal-content">
+          <span class="close" onclick="closeModal()">&times;</span>
+          <h2>Panier</h2>
+          <div id="cartItems"></div>
+          <button class="button" onclick="redirectToWhatsApp()">Acheter</button>
+      </div>
+  </div>
+</body>
+</html>
